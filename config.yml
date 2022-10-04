@@ -1,0 +1,22 @@
+Obsidian_dir: "/Users/xuanyuwu/Documents/SyncVault/Projects/TDMod\ Data\ Analysis"
+Obsidian_asset_dir: "/Users/xuanyuwu/Documents/SyncVault/Assets"
+Image_dir: "/Users/xuanyuwu/Documents/GitHub/TD-modulation-model/crossOutput_noInterneuron_longTauSlow_correctSTP_model_plots"
+
+NoteTitle: "crossOutput_noInterneuron_longTauSlow_correctSTP"
+customTags:
+  - avg_raw_dir
+  - avg_norm_dir
+  - avg_raw_sac_pvnp
+  - avg_norm_sac_pvnp
+  - avg_raw_sac_lvr
+  - avg_norm_sac_lvr
+  - train_acc
+  - test_acc
+  - raw_dir
+  - norm_dir
+  - raw_sac_pvnp
+  - norm_sac_pvnp
+  - raw_sac_pvnp
+  - norm_sac_pvnp
+
+  
