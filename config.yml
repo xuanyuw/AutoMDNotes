@@ -1,22 +1,30 @@
-Obsidian_dir: "/Users/xuanyuwu/Documents/SyncVault/Projects/TDMod\ Data\ Analysis"
-Obsidian_asset_dir: "/Users/xuanyuwu/Documents/SyncVault/Assets"
+Obsidian_dir: "/Users/xuanyuwu/Documents/testProjectFolder"
+Obsidian_asset_dir: "/Users/xuanyuwu/Documents/testAssets"
 Image_dir: "/Users/xuanyuwu/Documents/GitHub/TD-modulation-model/crossOutput_noInterneuron_longTauSlow_correctSTP_model_plots"
 
 NoteTitle: "crossOutput_noInterneuron_longTauSlow_correctSTP"
 customTags:
-  - avg_raw_dir
-  - avg_norm_dir
-  - avg_raw_sac_pvnp
-  - avg_norm_sac_pvnp
-  - avg_raw_sac_lvr
-  - avg_norm_sac_lvr
-  - train_acc
-  - test_acc
-  - raw_dir
-  - norm_dir
-  - raw_sac_pvnp
-  - norm_sac_pvnp
-  - raw_sac_pvnp
-  - norm_sac_pvnp
+  - avg_raw_dir: 'Motion_direction_selectivity_raw_average.png'
+  - avg_norm_dir: 'Motion_direction_selectivity_normalized_average.png'
+  - avg_raw_sac_pvnp: 'Target_saccade_selectivity_pvnp_raw_average.png'
+  - avg_norm_sac_pvnp: 'Target_saccade_selectivity_pvnp_normalized_average.png'
+  - avg_raw_sac_lvr: 'Target_saccade_selectivity_lvr_raw_average.png'
+  - avg_norm_sac_lvr: 'Target_saccade_selectivity_lvr_normalized_average.png'
+  - train_acc: 'TrainAcc_lr0.020000_rep%d.png'
+  - test_acc: 'test_acc_lr0.020000_rep%d.png'
+  - raw_dir: 'Motion_Motion_Selectivity_rep%d_selective_orig.png'
+  - norm_dir: 'Motion_Motion_Selectivity_rep%d_selective.png'
+  - raw_sac_pvnp: 'Target_Saccade_Selectivity_rep%d_selective_pvnp_orig.png'
+  - norm_sac_pvnp: 'Target_Saccade_Selectivity_rep%d_selective_pvnp.png'
+  - raw_sac_pvnp: 'Target_Saccade_Selectivity_rep%d_selective_lvr.png'
+  - norm_sac_pvnp: 'Target_Saccade_Selectivity_rep%d_selective_lvr_norm.png'
 
-  
+FilesToInclude:
+  - "TrainAcc_lr0.020000_rep%d.png"
+  - "test_acc_lr0.020000_rep%d.png"
+
+FoldersToInclude:
+  - "popu_act_selected_avg_lr0.020000"
+  - "popu_act_selected_rep%d_lr0.020000"
+
+Iter: 10 
