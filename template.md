@@ -20,7 +20,7 @@
 =avg_norm_sac_lvr=
 
 =LOOP=
-## Model =iter= 
+## Model =ITER= 
 ### Performance
 =train_acc=
 
