@@ -1,9 +1,9 @@
-Obsidian_dir: "/Users/xuanyuwu/Documents/testVault/testProjectFolder"
-Obsidian_asset_dir: "/Users/xuanyuwu/Documents/testVault/testAssets"
-Asset_rel_dir: "testAssets"
-Image_dir: "/Users/xuanyuwu/Documents/GitHub/TD-modulation-model/crossOutput_noInterneuron_longTauSlow_correctSTP_model_plots"
+Obsidian_dir: "D:\\ObsidianNotes\\Projects\\TDMod Data Analysis\\Model Results"
+Obsidian_asset_dir: "D:\\ObsidianNotes\\Assets"
+Asset_rel_dir: "Assets"
+Image_dir: "F:\\Github\\TD-modulation-model\\crossOutput_noInterneuron_DiffTauSlow_smallSTP_model"
 
-NoteTitle: "crossOutput_noInterneuron_longTauSlow_correctSTP"
+NoteTitle: "crossOutput_noInterneuron_DiffTauSlow_smallSTP"
 customTags:
     avg_raw_dir: 'Motion_direction_selectivity_raw_average.png'
     avg_norm_dir: 'Motion_direction_selectivity_normalized_average.png'
@@ -28,4 +28,4 @@ FoldersToInclude:
   - "popu_act_selected_avg_lr0.020000"
   - "popu_act_selected_rep%d_lr0.020000"
 
-Iter: 10 
+Iter: 20 

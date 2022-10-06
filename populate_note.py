@@ -1,4 +1,3 @@
-from distutils.command.config import config
 import yaml
 import re
 from os.path import join, exists
@@ -62,7 +61,10 @@ while l:
         else:
             k = re.search('=(.*)?=', l)[1]
             if k in configs['customTags'].keys():
-                newStr = re.sub('=(.*)=', '![['+join(configs['Asset_rel_dir'], configs['NoteTitle'], configs['FoldersToInclude'][0],configs['customTags'][k])+']]', l)
+                s = '![['+re.escape(join(configs['Asset_rel_dir'], configs['NoteTitle'], configs['FoldersToInclude'][0],configs['customTags'][k]))+']]'
+                s = s.replace('\.', '.')
+                s = s.replace('\\\\', '/')
+                newStr = re.sub('=(.*)=', s, l)
                 newText += newStr
     else:
         newText += l   
@@ -70,5 +72,5 @@ while l:
         newText = newText + '\n'
     l = temp.readline()
 
-with open(join(configs['Obsidian_dir'],'testFile.md'), 'w') as f:
+with open(join(configs['Obsidian_dir'], configs['NoteTitle'] +'.md'), 'w') as f:
     f.write(newText)

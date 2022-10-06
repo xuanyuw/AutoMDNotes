@@ -13,7 +13,10 @@ def createLoopedLines(lp, configs, all_dest_path):
                 else:
                     k = re.search('=(.*)?=', l)[1]
                     if k in configs['customTags'].keys():
-                        newStr = re.sub('=(.*)=', '![['+join(all_dest_path[i], configs['customTags'][k])+']]', l)
+                        s =  '![['+re.escape(join(all_dest_path[i], configs['customTags'][k]))+']]'
+                        s = s.replace('\.', '.')
+                        s = s.replace('\\\\', '/')
+                        newStr = re.sub('=(.*)=',s, l)
                         newStr = re.sub('%d', str(i), newStr)
                         ll += newStr
             else:
