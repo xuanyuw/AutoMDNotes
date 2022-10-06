@@ -8,23 +8,27 @@ def createLoopedLines(lp, configs, all_dest_path):
         for l in lp_lines:
             if l.count('=') == 2:
                 if 'ITER' in l:
-                    newStr = re.sub('=(.*)=', i, l)
+                    newStr = re.sub('=(.*)=', str(i), l)
                     ll += newStr
                 else:
                     k = re.search('=(.*)?=', l)[1]
                     if k in configs['customTags'].keys():
-                        newStr = re.sub('=(.*)=', '[['+join(all_dest_path[i], configs['customTags'][k])+']]', l)
+                        newStr = re.sub('=(.*)=', '![['+join(all_dest_path[i], configs['customTags'][k])+']]', l)
                         newStr = re.sub('%d', str(i), newStr)
                         ll += newStr
             else:
                 ll += l
-            ll += '\n'
+            if '\n' not in l:
+                ll += '\n'
     return ll
 
 
 def getLoopPattern(temp):
     lp = ''
     l = temp.readline()
-    while l != '=ENDLOOP=':
-        lp = lp + l + '\n'
+    while '=ENDLOOP=' not in l:
+        lp += l
+        if '\n' not in l:
+            lp += '\n'
+        l = temp.readline()
     return lp

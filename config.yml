@@ -1,5 +1,6 @@
-Obsidian_dir: "/Users/xuanyuwu/Documents/testProjectFolder"
-Obsidian_asset_dir: "/Users/xuanyuwu/Documents/testAssets"
+Obsidian_dir: "/Users/xuanyuwu/Documents/testVault/testProjectFolder"
+Obsidian_asset_dir: "/Users/xuanyuwu/Documents/testVault/testAssets"
+Asset_rel_dir: "testAssets"
 Image_dir: "/Users/xuanyuwu/Documents/GitHub/TD-modulation-model/crossOutput_noInterneuron_longTauSlow_correctSTP_model_plots"
 
 NoteTitle: "crossOutput_noInterneuron_longTauSlow_correctSTP"

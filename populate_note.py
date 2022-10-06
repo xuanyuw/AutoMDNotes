@@ -18,7 +18,11 @@ for i in range(configs['Iter']):
     for f in configs['FilesToInclude']:
         fname = f.replace('%d', str(i))
         src_path = join(configs['Image_dir'], fname)
-        copy(src_path, dest_dir)  
+        fdname = configs['FoldersToInclude'][1].replace('%d', str(i))
+        dest_path = join(configs['Obsidian_asset_dir'], configs['NoteTitle'], fdname)
+        if not exists(dest_path):
+            makedirs(dest_path)
+        copy(src_path, dest_path)  
  
 all_dest_path = [];
 for folder in configs['FoldersToInclude']:
@@ -27,7 +31,7 @@ for folder in configs['FoldersToInclude']:
             fdname = folder.replace('%d', str(i))
             src_path = join(configs['Image_dir'], fdname)
             dest_path = join(dest_dir, fdname)
-            all_dest_path.append(dest_path)
+            all_dest_path.append(join(configs['Asset_rel_dir'], configs['NoteTitle'], fdname))
             if not exists(dest_path):
                 makedirs(dest_path)
             for f in listdir(src_path):
@@ -53,13 +57,18 @@ while l:
             lp = getLoopPattern(temp)
             ll = createLoopedLines(lp, configs, all_dest_path)
             newText += ll 
+            while '=ENDLOOP=' not in l and not l:
+                l = temp.readline()
         else:
             k = re.search('=(.*)?=', l)[1]
             if k in configs['customTags'].keys():
-                newStr = re.sub('=(.*)=', '[['+join(configs['Obsidian_asset_dir'], configs['FoldersToInclude'][0],configs['customTags'][k])+']]', l)
+                newStr = re.sub('=(.*)=', '![['+join(configs['Asset_rel_dir'], configs['NoteTitle'], configs['FoldersToInclude'][0],configs['customTags'][k])+']]', l)
                 newText += newStr
     else:
         newText += l   
-    
-    newText = newText + '\n'
+    if '\n' not in l:
+        newText = newText + '\n'
     l = temp.readline()
+
+with open(join(configs['Obsidian_dir'],'testFile.md'), 'w') as f:
+    f.write(newText)
